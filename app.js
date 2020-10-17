@@ -1194,7 +1194,7 @@ const whitelistDomains = (res) => {
   var messageData = {
           "whitelisted_domains": [
              APP_URL , 
-             "https://herokuapp.com" ,                                   
+             "https://flowergift.herokuapp.com/" ,                                   
           ]               
   };  
   request({
