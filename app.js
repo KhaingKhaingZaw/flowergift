@@ -198,7 +198,6 @@ app.post('/admin/updateappointment', function(req,res){
     name:req.body.name,
     phone:req.body.phone,
     email:req.body.email,
-    gender:req.body.gender,
     doctor:req.body.doctor,
     department:req.body.department,
     visit:req.body.visit,
@@ -459,7 +458,7 @@ const handleMessage = (sender_psid, received_message) => {
      current_question = 'q3';
      botQuestions(current_question, sender_psid);
   }else if(current_question == 'q3'){
-     console.log('GENDER ENTERED',received_message.text);
+     console.log('DATE ENTERED',received_message.text);
      userInputs[user_id].date = received_message.text;
      current_question = 'q4';
      botQuestions(current_question, sender_psid);
@@ -471,14 +470,10 @@ const handleMessage = (sender_psid, received_message) => {
   }else if(current_question == 'q5'){
      console.log('EMAIL ENTERED',received_message.text);
      userInputs[user_id].email = received_message.text;
-     current_question = 'q7';
-     botQuestions(current_question, sender_psid);
-  }else if(current_question == 'q7'){
-     console.log('MESSAGE ENTERED',received_message.text);
-     userInputs[user_id].message = received_message.text;
      current_question = '';
      
      confirmAppointment(sender_psid);
+
   }
   else {
       
@@ -803,10 +798,8 @@ const confirmAppointment = (sender_psid) => {
   summery += "location:" + userInputs[user_id].location + "\u000A";
   summery += "date:" + userInputs[user_id].date + "\u000A";
   summery += "name:" + userInputs[user_id].name + "\u000A";
-  summery += "gender:" + userInputs[user_id].gender + "\u000A";
   summery += "phone:" + userInputs[user_id].phone + "\u000A";
   summery += "email:" + userInputs[user_id].email + "\u000A";
-  summery += "message:" + userInputs[user_id].message + "\u000A";
 
   let response1 = {"text": summery};
 
