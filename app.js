@@ -24,7 +24,7 @@ app.use(body_parser.json());
 app.use(body_parser.urlencoded());
 
 const bot_questions = {
-  "q1": "please enter date (yyyy-mm-dd)",
+  "q1": "Where would you like to send this? (Don't forget to include the apartment#)",
   "q2": "please enter time (hh:mm)",
   "q3": "please enter full name",
   "q4": "please enter gender",
@@ -451,7 +451,7 @@ const handleMessage = (sender_psid, received_message) => {
   if(received_message.attachments){
      handleAttachments(sender_psid, received_message.attachments);
   }else if(current_question == 'q1'){
-     console.log('DATE ENTERED',received_message.text);
+     console.log('LOCATION ENTERED',received_message.text);
      userInputs[user_id].date = received_message.text;
      current_question = 'q2';
      botQuestions(current_question, sender_psid);
@@ -681,7 +681,7 @@ start hospital
 const flowerOrder = (sender_psid) => {
    let response1 = {"text": "Welcome to Flower Gift Service"};
    let response2 = {
-    "text": "Please select department",
+    "text": "What would you like to do today?",
     "quick_replies":[
             {
               "content_type":"text",
