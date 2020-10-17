@@ -861,7 +861,7 @@ end hospital
 
 
 const hiReply =(sender_psid) => {
-  let response = {"text": "You sent hi message"};
+  let response = {"text": "Welcome to Flower Gift Service"};
   callSend(sender_psid, response);
 }
 
