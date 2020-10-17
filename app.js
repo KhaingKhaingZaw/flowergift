@@ -497,8 +497,8 @@ const handleMessage = (sender_psid, received_message) => {
       case "hi":
           hiReply(sender_psid);
         break;
-      case "hospital":
-          hospitalAppointment(sender_psid);
+      case "order":
+          flowerOrder(sender_psid);
         break;                
       case "text":
         textReply(sender_psid);
@@ -678,8 +678,8 @@ function webviewTest(sender_psid){
 /**************
 start hospital
 **************/
-const hospitalAppointment = (sender_psid) => {
-   let response1 = {"text": "Welcome to ABC Hospital"};
+const flowerOrder = (sender_psid) => {
+   let response1 = {"text": "Welcome to Flower Gift Service"};
    let response2 = {
     "text": "Please select department",
     "quick_replies":[
