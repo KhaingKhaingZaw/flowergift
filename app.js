@@ -204,7 +204,7 @@ app.post('/admin/updateappointment', function(req,res){
     doctor:req.body.doctor,
     department:req.body.department,
     visit:req.body.visit,
-    date:req.body.date,
+    location:req.body.location,
     time:req.body.time,
     message:req.body.message,
     status:req.body.status,
@@ -452,7 +452,7 @@ const handleMessage = (sender_psid, received_message) => {
      handleAttachments(sender_psid, received_message.attachments);
   }else if(current_question == 'q1'){
      console.log('LOCATION ENTERED',received_message.text);
-     userInputs[user_id].date = received_message.text;
+     userInputs[user_id].location = received_message.text;
      current_question = 'q2';
      botQuestions(current_question, sender_psid);
   }else if(current_question == 'q2'){
@@ -807,7 +807,7 @@ const confirmAppointment = (sender_psid) => {
   let summery = "department:" + userInputs[user_id].department + "\u000A";
   summery += "doctor:" + userInputs[user_id].doctor + "\u000A";
   summery += "visit:" + userInputs[user_id].visit + "\u000A";
-  summery += "date:" + userInputs[user_id].date + "\u000A";
+  summery += "location:" + userInputs[user_id].location + "\u000A";
   summery += "time:" + userInputs[user_id].time + "\u000A";
   summery += "name:" + userInputs[user_id].name + "\u000A";
   summery += "gender:" + userInputs[user_id].gender + "\u000A";
