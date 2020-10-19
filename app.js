@@ -755,7 +755,6 @@ const showCollection = (sender_psid) => {
 
 }
 
-const firstOrFollowUp = (sender_psid) => {
 const showCollection = (sender_psid) => {
     let response = {
       "attachment": {
