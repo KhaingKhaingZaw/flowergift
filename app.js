@@ -702,7 +702,7 @@ const showCollection = (sender_psid) => {
           "template_type": "generic",
           "elements": [{
             "title": "Wild Beauty",
-            "image_url":"https://en.wikipedia.org/wiki/File:Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg",                       
+            "image_url":"https://i.dlpng.com/static/png/1584646-premium-flowers-assortment-assorted-flowers-png-4272_2848_preview.png",                       
             "buttons": [
                 {
                   "type": "postback",
