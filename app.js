@@ -711,25 +711,36 @@ const showCollection = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Kenneth Martinez",
-            "subtitle": "General Surgeon",
-            "image_url":"https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg",                       
+            "title": "Seasonal",
+            "subtitle": "Special",
+            "image_url":"https://www.bloominggreenflowers.co.uk/wp-content/uploads/2017/01/Bouquet-seasonal-flowers.jpeg",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "Kenneth Martinez",
-                  "payload": "Doctor:Kenneth Martinez",
+                  "title": "View Collection",
+                  "payload": "Doctor:View Collection",
                 },               
               ],
           },{
-            "title": "Barbara Young",
-            "subtitle": "General Surgeon",
-            "image_url":"https://cdn.iconscout.com/icon/free/png-512/doctor-567-1118047.png",                       
+            "title": "Love & Romancce",
+            "subtitle": "I Love You",
+            "image_url":"https://www.artemisia.fi.it/fioristi/wp-content/uploads/2016/02/Bouquet_love-scaled.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "Barbara Young",
-                  "payload": "Doctor:Barbara Young",
+                  "title": "View Collection",
+                  "payload": "Doctor:View Collection",
+                },               
+              ],
+          },{
+            "title": "Happy Birthday",
+            "subtitle": "Make Happier",
+            "image_url":"https://pembertonsflowers.com/wp-content/uploads/2018/11/T602-2B.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "View Collection",
+                  "payload": "View Collection",
                 },               
               ],
           }
