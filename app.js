@@ -198,7 +198,7 @@ app.post('/admin/updateappointment', function(req,res){
     name:req.body.name,
     phone:req.body.phone,
     email:req.body.email,
-    doctor:req.body.doctor,
+    flower:req.body.flower,
     start:req.body.start,
     visit:req.body.visit,
     location:req.body.location,
@@ -412,7 +412,7 @@ function handleQuickReply(sender_psid, received_message) {
   }else if(received_message.startsWith("start:")){
     let dept = received_message.slice(11);
     userInputs[user_id].start = dept;
-    showDoctor(sender_psid);
+    showCollection(sender_psid);
   }else{
 
       switch(received_message) {                
@@ -694,21 +694,20 @@ const flowerOrder = (sender_psid) => {
 }
 
 
-const showDoctor = (sender_psid) => {
+const showCollection = (sender_psid) => {
     let response = {
       "attachment": {
         "type": "template",
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "James Smith",
-            "subtitle": "General Surgeon",
-            "image_url":"https://image.freepik.com/free-vector/doctor-icon-avatar-white_136162-58.jpg",                       
+            "title": "Wild Beauty",
+            "image_url":"https://images.app.goo.gl/6VxG9BUp1wLPUwvC6",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "James Smith",
-                  "payload": "Doctor:James Smith",
+                  "title": "View Collection",
+                  "payload": "Doctor:JView Collection",
                 },               
               ],
           },{
@@ -793,7 +792,7 @@ const botQuestions = (current_question, sender_psid) => {
 const confirmAppointment = (sender_psid) => {
   console.log('APPOINTMENT INFO', userInputs);
   let summery = "start:" + userInputs[user_id].start + "\u000A";
-  summery += "doctor:" + userInputs[user_id].doctor + "\u000A";
+  summery += "flower:" + userInputs[user_id].flower + "\u000A";
   summery += "visit:" + userInputs[user_id].visit + "\u000A";
   summery += "location:" + userInputs[user_id].location + "\u000A";
   summery += "date:" + userInputs[user_id].date + "\u000A";
