@@ -199,7 +199,7 @@ app.post('/admin/updateappointment', function(req,res){
     phone:req.body.phone,
     email:req.body.email,
     doctor:req.body.doctor,
-    department:req.body.department,
+    start:req.body.start,
     visit:req.body.visit,
     location:req.body.location,
     date:req.body.date,
@@ -409,9 +409,9 @@ function handleQuickReply(sender_psid, received_message) {
     
     current_question = 'q1';
     botQuestions(current_question, sender_psid);
-  }else if(received_message.startsWith("department:")){
+  }else if(received_message.startsWith("start:")){
     let dept = received_message.slice(11);
-    userInputs[user_id].department = dept;
+    userInputs[user_id].start = dept;
     showDoctor(sender_psid);
   }else{
 
@@ -667,22 +667,22 @@ function webviewTest(sender_psid){
 start hospital
 **************/
 const flowerOrder = (sender_psid) => {
-   let response1 = {"text": "Welcome to Flower Gift Service"};
+   let response1 = {"text": "Welcome to Lily Flower Gift Service"};
    let response2 = {
     "text": "What would you like to do today?",
     "quick_replies":[
             {
               "content_type":"text",
-              "title":"General Surgery",
-              "payload":"department:General Surgery",              
+              "title":"Send a gift",
+              "payload":"start:Send a gift",              
             },{
               "content_type":"text",
-              "title":"ENT",
-              "payload":"department:ENT",             
+              "title":"Track my order",
+              "payload":"start:Track my order",             
             },{
               "content_type":"text",
               "title":"Dermatology",
-              "payload":"department:Dermatology", 
+              "payload":"start:Dermatology", 
             }
 
     ]
@@ -792,7 +792,7 @@ const botQuestions = (current_question, sender_psid) => {
 
 const confirmAppointment = (sender_psid) => {
   console.log('APPOINTMENT INFO', userInputs);
-  let summery = "department:" + userInputs[user_id].department + "\u000A";
+  let summery = "start:" + userInputs[user_id].start + "\u000A";
   summery += "doctor:" + userInputs[user_id].doctor + "\u000A";
   summery += "visit:" + userInputs[user_id].visit + "\u000A";
   summery += "location:" + userInputs[user_id].location + "\u000A";
