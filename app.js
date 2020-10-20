@@ -570,7 +570,7 @@ const handlePostback = (sender_psid, received_postback) => {
     console.log('SELECTED DOCTOR IS: ', doctor_name);
     userInputs[user_id].doctor = doctor_name;
     console.log('TEST', userInputs);
-    firstOrFollowUp(sender_psid);
+    viewCollection(sender_psid);
   }else{
 
       switch(payload) {        
@@ -755,19 +755,68 @@ const showCollection = (sender_psid) => {
 
 }
 
-const firstOrFollowUp = (sender_psid) => {
+const viewCollection = (sender_psid) => {
+  let response1 = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Wild Beauty",
+            "image_url":"https://i.dlpng.com/static/png/1584646-premium-flowers-assortment-assorted-flowers-png-4272_2848_preview.png",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "View Collection",
+                  "payload": "Doctor:View Collection",
+                },               
+              ],
+          },{
+            "title": "Seasonal",
+            "subtitle": "Special",
+            "image_url":"https://www.bloominggreenflowers.co.uk/wp-content/uploads/2017/01/Bouquet-seasonal-flowers.jpeg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "View Collection",
+                  "payload": "Doctor:View Collection",
+                },               
+              ],
+          },{
+            "title": "Love & Romancce",
+            "subtitle": "I Love You",
+            "image_url":"https://www.artemisia.fi.it/fioristi/wp-content/uploads/2016/02/Bouquet_love-scaled.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "View Collection",
+                  "payload": "Doctor:View Collection",
+                },               
+              ],
+          },{
+            "title": "Happy Birthday",
+            "subtitle": "Make Happier",
+            "image_url":"https://pembertonsflowers.com/wp-content/uploads/2018/11/T602-2B.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "View Collection",
+                  "payload": "View Collection",
+                },               
+              ],
+          }
 
-  let response = {
-    "text": "First Time Visit or Follow Up",
+          ]
+        }
+      }
+    }
+
+  let response2 = {
     "quick_replies":[
             {
               "content_type":"text",
               "title":"First Time",
               "payload":"visit:first time",              
-            },{
-              "content_type":"text",
-              "title":"Follow Up",
-              "payload":"visit:follow up",             
             }
     ]
   };
