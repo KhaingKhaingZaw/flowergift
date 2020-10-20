@@ -762,46 +762,47 @@ const viewCollection = (sender_psid) => {
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "Wild Beauty",
-            "image_url":"https://i.dlpng.com/static/png/1584646-premium-flowers-assortment-assorted-flowers-png-4272_2848_preview.png",                       
+            "title": "Gabriella",
+            "subtitle": "20,000MMK",
+            "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "title": "Select",
+                  "payload": "Type of Flower:Select",
                 },               
               ],
           },{
-            "title": "Seasonal",
-            "subtitle": "Special",
-            "image_url":"https://www.bloominggreenflowers.co.uk/wp-content/uploads/2017/01/Bouquet-seasonal-flowers.jpeg",                       
+            "title": "Chole",
+            "subtitle": "25,000MMK",
+            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "title": "Select",
+                  "payload": "Flower:Select",
                 },               
               ],
           },{
-            "title": "Love & Romancce",
-            "subtitle": "I Love You",
-            "image_url":"https://www.artemisia.fi.it/fioristi/wp-content/uploads/2016/02/Bouquet_love-scaled.jpg",                       
+            "title": "Naomi",
+            "subtitle": "25,000MMK",
+            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "title": "Select",
+                  "payload": "Flower:Select",
                 },               
               ],
           },{
-            "title": "Happy Birthday",
-            "subtitle": "Make Happier",
-            "image_url":"https://pembertonsflowers.com/wp-content/uploads/2018/11/T602-2B.jpg",                       
+            "title": "Madison",
+            "subtitle": "30,000MMK",
+            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
-                  "title": "View Collection",
-                  "payload": "View Collection",
+                  "title": "Select",
+                  "payload": "Select",
                 },               
               ],
           }
@@ -812,11 +813,12 @@ const viewCollection = (sender_psid) => {
     }
 
   let response2 = {
+    "text": "Choose other collection?",
     "quick_replies":[
             {
               "content_type":"text",
-              "title":"First Time",
-              "payload":"selection:first time",              
+              "title":"Other Collection",
+              "payload":"selection:Other Collection",              
             }
     ]
   };
