@@ -679,11 +679,7 @@ const flowerOrder = (sender_psid) => {
               "content_type":"text",
               "title":"Track my order",
               "payload":"start:Track my order",             
-            },{
-              "content_type":"text",
-              "title":"Dermatology",
-              "payload":"start:Dermatology", 
-            }
+            },
 
     ]
   };
@@ -765,6 +761,78 @@ const viewCollection = (sender_psid) => {
             "title": "Gabriella",
             "subtitle": "20,000MMK",
             "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "Type of Flower:Select",
+                },               
+              ],
+          },{
+            "title": "Chole",
+            "subtitle": "25,000MMK",
+            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "Flower:Select",
+                },               
+              ],
+          },{
+            "title": "Naomi",
+            "subtitle": "25,000MMK",
+            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "Flower:Select",
+                },               
+              ],
+          },{
+            "title": "Madison",
+            "subtitle": "30,000MMK",
+            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "Select",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }
+
+  let response2 = {
+    "text": "Choose other collection?",
+    "quick_replies":[
+            {
+              "content_type":"text",
+              "title":"Other Collection",
+              "payload":"selection:Other Collection",              
+            }
+    ]
+  };
+  callSend(sender_psid, response1).then(()=>{
+    return callSend(sender_psid, response2);
+  });
+
+}
+const viewCollection = (sender_psid) => {
+  let response1 = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Floral Embrace",
+            "subtitle": "20,000MMK",
+            "image_url":"https://d1whpkioiz600t.cloudfront.net/Images/product/15-mix-flowers-seasonal-bouqueta.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
