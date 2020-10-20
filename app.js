@@ -740,7 +740,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "payload": "View Collection",
                 },               
               ],
           }
@@ -801,7 +801,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "payload": "View Collection",
                 },               
               ],
           }
@@ -856,6 +856,7 @@ const confirmAppointment = (sender_psid) => {
   let summery = "start:" + userInputs[user_id].start + "\u000A";
   summery += "flower:" + userInputs[user_id].flower + "\u000A";
   summery += "selection:" + userInputs[user_id].selection + "\u000A";
+  summery += "select:" + userInputs[user_id].select + "\u000A";
   summery += "location:" + userInputs[user_id].location + "\u000A";
   summery += "date:" + userInputs[user_id].date + "\u000A";
   summery += "name:" + userInputs[user_id].name + "\u000A";
