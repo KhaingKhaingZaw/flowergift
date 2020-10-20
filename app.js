@@ -200,7 +200,7 @@ app.post('/admin/updateappointment', function(req,res){
     email:req.body.email,
     flower:req.body.flower,
     start:req.body.start,
-    visit:req.body.visit,
+    selection:req.body.selection,
     location:req.body.location,
     date:req.body.date,
     message:req.body.message,
@@ -402,10 +402,10 @@ function handleQuickReply(sender_psid, received_message) {
 
   received_message = received_message.toLowerCase();
 
-  if(received_message.startsWith("visit:")){
-    let visit = received_message.slice(6);
+  if(received_message.startsWith("selection:")){
+    let selection = received_message.slice(6);
     
-    userInputs[user_id].visit = visit;
+    userInputs[user_id].selection = selection;
     
     current_question = 'q1';
     botQuestions(current_question, sender_psid);
@@ -565,10 +565,10 @@ const handlePostback = (sender_psid, received_postback) => {
   console.log('BUTTON PAYLOAD', payload);
 
   
-  if(payload.startsWith("Doctor:")){
-    let doctor_name = payload.slice(7);
-    console.log('SELECTED DOCTOR IS: ', doctor_name);
-    userInputs[user_id].doctor = doctor_name;
+  if(payload.startsWith("Flower:")){
+    let flower_selection = payload.slice(7);
+    console.log('SELECTED FLOWER IS: ', flower_selection);
+    userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
     viewCollection(sender_psid);
   }else{
@@ -707,7 +707,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Doctor:View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           },{
@@ -718,7 +718,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Doctor:View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           },{
@@ -729,7 +729,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Doctor:View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           },{
@@ -740,7 +740,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           }
@@ -768,7 +768,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Doctor:View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           },{
@@ -779,7 +779,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Doctor:View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           },{
@@ -790,7 +790,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Doctor:View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           },{
@@ -801,7 +801,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           }
@@ -816,11 +816,13 @@ const viewCollection = (sender_psid) => {
             {
               "content_type":"text",
               "title":"First Time",
-              "payload":"visit:first time",              
+              "payload":"selection:first time",              
             }
     ]
   };
-  callSend(sender_psid, response);
+  callSend(sender_psid, response1).then(()=>{
+    return callSend(sender_psid, response2);
+  });
 
 }
 
@@ -853,7 +855,7 @@ const confirmAppointment = (sender_psid) => {
   console.log('APPOINTMENT INFO', userInputs);
   let summery = "start:" + userInputs[user_id].start + "\u000A";
   summery += "flower:" + userInputs[user_id].flower + "\u000A";
-  summery += "visit:" + userInputs[user_id].visit + "\u000A";
+  summery += "selection:" + userInputs[user_id].selection + "\u000A";
   summery += "location:" + userInputs[user_id].location + "\u000A";
   summery += "date:" + userInputs[user_id].date + "\u000A";
   summery += "name:" + userInputs[user_id].name + "\u000A";
