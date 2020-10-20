@@ -823,7 +823,7 @@ const viewCollection = (sender_psid) => {
   });
 
 }
-const viewCollection = (sender_psid) => {
+const seasonalCollection = (sender_psid) => {
   let response1 = {
       "attachment": {
         "type": "template",
