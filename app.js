@@ -201,6 +201,7 @@ app.post('/admin/updateappointment', function(req,res){
     flower:req.body.flower,
     start:req.body.start,
     selection:req.body.selection,
+    select:req.body.select,
     location:req.body.location,
     date:req.body.date,
     message:req.body.message,
@@ -396,16 +397,15 @@ app.get('/webhook', (req, res) => {
 Function to Handle when user send quick reply message
 ***********************************************/
 
-function handleQuickReply(sender_psid, received_message) {
+function handlePostback(sender_psid, received_message) {
 
-  console.log('QUICK REPLY', received_message);
+  console.log('BUTTON PAYLOAD', payload);
 
-  received_message = received_message.toLowerCase();
-
-  if(received_message.startsWith("selection:")){
-    let selection = received_message.slice(6);
+  
+  if(payload.startsWith("Type of Flower:")){
+    let flower_select = payload.slice(7);
     
-    userInputs[user_id].selection = selection;
+    userInputs[user_id].select = select;
     
     current_question = 'q1';
     botQuestions(current_question, sender_psid);
