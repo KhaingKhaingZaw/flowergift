@@ -574,17 +574,17 @@ const handlePostback = (sender_psid, received_postback) => {
   }else{
 
       switch(payload) {        
-      case "showWildFlower":
-          showButtonReplyYes(sender_psid);
+      case "WildFlower":
+          showWildFlower(sender_psid);
         break;
-      case "showSeasonal":
-          showButtonReplyNo(sender_psid);
+      case "Seasonal":
+          showSeasonal(sender_psid);
         break; 
-      case "showLove":
-          showButtonReplyNo(sender_psid);
+      case "Love & Romance":
+          showLove(sender_psid);
         break;  
-      case "showBirthday":
-          showButtonReplyNo(sender_psid);
+      case "Birthday":
+          showBirthday(sender_psid);
         break;                       
       default:
           defaultReply(sender_psid);
