@@ -396,7 +396,7 @@ app.get('/webhook', (req, res) => {
 Function to Handle when user send quick reply message
 ***********************************************/
 
-function handleQuickReply(sender_psid, received_message) {
+function handlePostback(sender_psid, received_message) {
 
   console.log('QUICK REPLY', received_message);
 
