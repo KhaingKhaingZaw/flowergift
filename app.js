@@ -403,14 +403,14 @@ function handleQuickReply(sender_psid, received_message) {
   received_message = received_message.toLowerCase();
 
   if(received_message.startsWith("selection:")){
-    let selection = received_message.slice(6);
+    let selection = received_message.slice(10);
     
     userInputs[user_id].selection = selection;
     
     current_question = 'q1';
     botQuestions(current_question, sender_psid);
   }else if(received_message.startsWith("start:")){
-    let dept = received_message.slice(11);
+    let dept = received_message.slice(6);
     userInputs[user_id].start = dept;
     showCollection(sender_psid);
   }else{
@@ -570,7 +570,7 @@ const handlePostback = (sender_psid, received_postback) => {
     console.log('SELECTED FLOWER IS: ', flower_selection);
     userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
-    viewCollection(sender_psid);
+    showWildFlower(sender_psid);
   }else{
 
       switch(payload) {        
