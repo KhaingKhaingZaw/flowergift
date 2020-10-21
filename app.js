@@ -595,45 +595,6 @@ const handlePostback = (sender_psid, received_postback) => {
 
   
 }
-const handlePostback = (sender_psid, received_postback) => { 
-
-  
-
-  let payload = received_postback.payload;
-
-  console.log('BUTTON PAYLOAD', payload);
-
-  
-  if(payload.startsWith("Flower:")){
-    let flower_selection = payload.slice(7);
-    console.log('SELECTED FLOWER IS: ', flower_selection);
-    userInputs[user_id].flower = flower_selection;
-    console.log('TEST', userInputs);
-    showSeasonal(sender_psid);
-  }else{
-
-      switch(payload) {        
-      case "WildFlower":
-          showWildFlower(sender_psid);
-        break;
-      case "Seasonal":
-          showSeasonal(sender_psid);
-        break; 
-      case "Love & Romance":
-          showLove(sender_psid);
-        break;  
-      case "Birthday":
-          showBirthday(sender_psid);
-        break;                       
-      default:
-          defaultReply(sender_psid);
-    } 
-
-  }
-
-
-  
-}
 
 
 const generateRandom = (length) => {
