@@ -570,17 +570,8 @@ const handlePostback = (sender_psid, received_postback) => {
     console.log('SELECTED FLOWER IS: ', flower_selection);
     userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
-    showWildFlower(sender_psid);
-  }else if(payload.startsWith("Flower:")){
-    let flower_selection = payload.slice(7);
-    console.log('SELECTED FLOWER IS: ', flower_selection);
-    userInputs[user_id].flower = flower_selection;
-    console.log('TEST', userInputs);
-    showSeasonal(sender_psid);
-  }
-  else{
-
-      switch(payload) {        
+    showWild(sender_psid);
+  }     
       case "WildFlower":
           showWildFlower(sender_psid);
         break;
@@ -596,12 +587,6 @@ const handlePostback = (sender_psid, received_postback) => {
       default:
           defaultReply(sender_psid);
     } 
-
-  }
-
-
-  
-}
 
 
 const generateRandom = (length) => {
