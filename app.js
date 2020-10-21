@@ -571,7 +571,9 @@ const handlePostback = (sender_psid, received_postback) => {
     userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
     showWildFlower(sender_psid);
-  }     
+  }else{
+
+      switch(payload) {        
       case "WildFlower":
           showWildFlower(sender_psid);
         break;
@@ -587,6 +589,12 @@ const handlePostback = (sender_psid, received_postback) => {
       default:
           defaultReply(sender_psid);
     } 
+
+  }
+
+
+  
+}
 
 
 const generateRandom = (length) => {
