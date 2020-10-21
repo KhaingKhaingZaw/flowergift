@@ -556,9 +556,13 @@ const handleAttachments = (sender_psid, attachments) => {
 /*********************************************
 Function to handle when user click button
 **********************************************/
-const handlePostback = (sender_psid, received_postback) => { 
+function handlePostBack (sender_psid, received_message) => { 
 
-  
+  if(payload.startsWith("Flower:")){
+    let product_name = payload.slice(7);
+    userInputs[user_id].product_name = product_name;
+    selectFlower(sender_psid);
+  }
 
   let payload = received_postback.payload;
 
