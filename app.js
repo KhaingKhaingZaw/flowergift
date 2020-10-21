@@ -574,12 +574,18 @@ const handlePostback = (sender_psid, received_postback) => {
   }else{
 
       switch(payload) {        
-      case "yes":
+      case "showWildFlower":
           showButtonReplyYes(sender_psid);
         break;
-      case "no":
+      case "showSeasonal":
           showButtonReplyNo(sender_psid);
-        break;                      
+        break; 
+      case "showLove":
+          showButtonReplyNo(sender_psid);
+        break;  
+      case "showBirthday":
+          showButtonReplyNo(sender_psid);
+        break;                       
       default:
           defaultReply(sender_psid);
     } 
@@ -736,7 +742,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "View Collection",
+                  "payload": "Flower:View Collection",
                 },               
               ],
           }
@@ -751,8 +757,8 @@ const showCollection = (sender_psid) => {
 
 }
 
-const viewCollection = (sender_psid) => {
-  let response1 = {
+const showWildFlower = (sender_psid) => {
+  let response = {
       "attachment": {
         "type": "template",
         "payload": {
@@ -765,7 +771,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "Type of Flower:Select",
+                  "payload": "wild:Select",
                 },               
               ],
           },{
@@ -776,7 +782,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "Flower:Select",
+                  "payload": "wild:Select",
                 },               
               ],
           },{
@@ -787,7 +793,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "Flower:Select",
+                  "payload": "wild:Select",
                 },               
               ],
           },{
@@ -798,7 +804,7 @@ const viewCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "Select",
+                  "payload": "wild:Select",
                 },               
               ],
           }
@@ -808,21 +814,197 @@ const viewCollection = (sender_psid) => {
       }
     }
 
-  let response2 = {
-    "text": "Choose other collection?",
-    "quick_replies":[
-            {
-              "content_type":"text",
-              "title":"Other Collection",
-              "payload":"selection:Other Collection",              
-            }
-    ]
-  };
-  callSend(sender_psid, response1).then(()=>{
-    return callSend(sender_psid, response2);
-  });
+ 
+  callSend(sender_psid, response);
 
 }
+
+const showSeasonal = (sender_psid) => {
+  let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Acashia",
+            "subtitle": "20,000MMK",
+            "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "seasonal:Select",
+                },               
+              ],
+          },{
+            "title": "Chole",
+            "subtitle": "25,000MMK",
+            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "seasonal:Select",
+                },               
+              ],
+          },{
+            "title": "Naomi",
+            "subtitle": "25,000MMK",
+            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "seasonal:Select",
+                },               
+              ],
+          },{
+            "title": "Madison",
+            "subtitle": "30,000MMK",
+            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "seasonal:Select",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }
+
+ 
+  callSend(sender_psid, response);
+
+}
+
+const showLove = (sender_psid) => {
+  let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Chocolate",
+            "subtitle": "20,000MMK",
+            "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "love:Select",
+                },               
+              ],
+          },{
+            "title": "Chole",
+            "subtitle": "25,000MMK",
+            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "love:Select",
+                },               
+              ],
+          },{
+            "title": "Naomi",
+            "subtitle": "25,000MMK",
+            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "love:Select",
+                },               
+              ],
+          },{
+            "title": "Madison",
+            "subtitle": "30,000MMK",
+            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "love:Select",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }
+
+ 
+  callSend(sender_psid, response);
+
+}
+
+const showBirthday = (sender_psid) => {
+  let response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Rose",
+            "subtitle": "20,000MMK",
+            "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "birthday:Select",
+                },               
+              ],
+          },{
+            "title": "Chole",
+            "subtitle": "25,000MMK",
+            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "birthday:Select",
+                },               
+              ],
+          },{
+            "title": "Naomi",
+            "subtitle": "25,000MMK",
+            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "birthday:Select",
+                },               
+              ],
+          },{
+            "title": "Madison",
+            "subtitle": "30,000MMK",
+            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
+            "buttons": [
+                {
+                  "type": "postback",
+                  "title": "Select",
+                  "payload": "birthday:Select",
+                },               
+              ],
+          }
+
+          ]
+        }
+      }
+    }
+
+ 
+  callSend(sender_psid, response);
+
+}
+
 
 
 const botQuestions = (current_question, sender_psid) => {
