@@ -563,17 +563,7 @@ const handlePostback = (sender_psid, received_postback) => {
   let payload = received_postback.payload;
 
   console.log('BUTTON PAYLOAD', payload);
-
-  
-  if(payload.startsWith("Flower:")){
-    let flower_selection = payload.slice(7);
-    console.log('SELECTED FLOWER IS: ', flower_selection);
-    userInputs[user_id].flower = flower_selection;
-    console.log('TEST', userInputs);
-    viewCollection(sender_psid);
-  }else{
-
-      switch(payload) {        
+      
       case "WildFlower":
           showWildFlower(sender_psid);
         break;
@@ -590,11 +580,7 @@ const handlePostback = (sender_psid, received_postback) => {
           defaultReply(sender_psid);
     } 
 
-  }
-
-
   
-}
 
 
 const generateRandom = (length) => {
