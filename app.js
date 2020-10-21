@@ -571,10 +571,14 @@ const handlePostback = (sender_psid, received_postback) => {
     userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
     showWildFlower(sender_psid);
+  }else if(payload.startsWith("Flower:")){
+    let flower_selection = payload.slice(7);
+    console.log('SELECTED FLOWER IS: ', flower_selection);
+    userInputs[user_id].flower = flower_selection;
+    console.log('TEST', userInputs);
     showSeasonal(sender_psid);
-    showLove(sender_psid);
-    showBirthday(sender_psid);
-  }else{
+  }
+  else{
 
       switch(payload) {        
       case "WildFlower":
