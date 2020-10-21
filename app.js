@@ -571,6 +571,9 @@ const handlePostback = (sender_psid, received_postback) => {
     userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
     showWildFlower(sender_psid);
+    showSeasonal(sender_psid);
+    showLove(sender_psid);
+    showBirthday(sender_psid);
   }else{
 
       switch(payload) {        
