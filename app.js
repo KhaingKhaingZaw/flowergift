@@ -570,7 +570,7 @@ const handlePostback = (sender_psid, received_postback) => {
     console.log('SELECTED FLOWER IS: ', flower_selection);
     userInputs[user_id].flower = flower_selection;
     console.log('TEST', userInputs);
-    showWild(sender_psid);
+    showWildFlower(sender_psid);
   }     
       case "WildFlower":
           showWildFlower(sender_psid);
