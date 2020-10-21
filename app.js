@@ -556,18 +556,24 @@ const handleAttachments = (sender_psid, attachments) => {
 /*********************************************
 Function to handle when user click button
 **********************************************/
-function handlePostBack (sender_psid, received_message) => { 
+const handlePostback = (sender_psid, received_postback) => { 
 
-  if(payload.startsWith("Flower:")){
-    let product_name = payload.slice(7);
-    userInputs[user_id].product_name = product_name;
-    selectFlower(sender_psid);
-  }
+  
 
   let payload = received_postback.payload;
 
   console.log('BUTTON PAYLOAD', payload);
-      
+
+  
+  if(payload.startsWith("Flower:")){
+    let flower_selection = payload.slice(7);
+    console.log('SELECTED FLOWER IS: ', flower_selection);
+    userInputs[user_id].flower = flower_selection;
+    console.log('TEST', userInputs);
+    viewCollection(sender_psid);
+  }else{
+
+      switch(payload) {        
       case "WildFlower":
           showWildFlower(sender_psid);
         break;
@@ -584,7 +590,11 @@ function handlePostBack (sender_psid, received_message) => {
           defaultReply(sender_psid);
     } 
 
+  }
+
+
   
+}
 
 
 const generateRandom = (length) => {
