@@ -1230,7 +1230,7 @@ function testDelete(sender_psid){
 }
 
 const defaultReply = (sender_psid) => {
-  let response1 = {"text": "To test text reply, type 'text'"};
+  let response1 = {"text": "Hello"};
   let response2 = {"text": "To test quick reply, type 'quick'"};
   let response3 = {"text": "To test button reply, type 'button'"};   
   let response4 = {"text": "To test webview, type 'webview'"};
