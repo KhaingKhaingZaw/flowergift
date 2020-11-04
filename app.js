@@ -709,7 +709,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "payload": "WildFlower",
                 },               
               ],
           },{
