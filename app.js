@@ -472,7 +472,7 @@ const handleMessage = (sender_psid, received_message) => {
      userInputs[user_id].email = received_message.text;
      current_question = '';
      
-     confirmAppointment(sender_psid);
+     confirmAppointment(userInput, sender_psid);
 
   }
   else {
@@ -569,8 +569,8 @@ const handlePostback = (sender_psid, received_postback) => {
     let flower_selection = payload.slice(7);
     console.log('SELECTED FLOWER IS: ', flower_selection);
     userInputs[user_id].flower = flower_selection;
-    console.log('TEST', userInputs);
-    showWildFlower(sender_psid);
+    current_question = 'q1';
+    botQuestions(current_question, sender_psid);
   }else{
 
       switch(payload) {        
@@ -771,7 +771,7 @@ const showWildFlower = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "wild:Select",
+                  "payload": "Flower:Gabriella",
                 },               
               ],
           },{
@@ -782,7 +782,7 @@ const showWildFlower = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "wild:Select",
+                  "payload": "Flower:Chole",
                 },               
               ],
           },{
@@ -793,7 +793,7 @@ const showWildFlower = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "wild:Select",
+                  "payload": "Flower:Naomi",
                 },               
               ],
           },{
@@ -804,7 +804,7 @@ const showWildFlower = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "wild:Select",
+                  "payload": "Flower:Madison",
                 },               
               ],
           }
@@ -1022,12 +1022,6 @@ const botQuestions = (current_question, sender_psid) => {
     callSend(sender_psid, response);
   }else if(current_question == 'q5'){
     let response = {"text": bot_questions.q5};
-    callSend(sender_psid, response);
-  }else if(current_question == 'q6'){
-    let response = {"text": bot_questions.q6};
-    callSend(sender_psid, response);
-  }else if(current_question == 'q7'){
-    let response = {"text": bot_questions.q7};
     callSend(sender_psid, response);
   }
 }
