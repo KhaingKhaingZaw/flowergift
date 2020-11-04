@@ -472,7 +472,7 @@ const handleMessage = (sender_psid, received_message) => {
      userInputs[user_id].email = received_message.text;
      current_question = '';
      
-     confirmAppointment(userInput, sender_psid);
+     confirmAppointment(userInputs, sender_psid);
 
   }
   else {
@@ -1026,7 +1026,7 @@ const botQuestions = (current_question, sender_psid) => {
   }
 }
 
-const confirmAppointment = (sender_psid) => {
+const confirmAppointment = (userInputs, sender_psid) => {
   console.log('APPOINTMENT INFO', userInputs);
   let summery = "start:" + userInputs[user_id].start + "\u000A";
   summery += "flower:" + userInputs[user_id].flower + "\u000A";
