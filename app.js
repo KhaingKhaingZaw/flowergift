@@ -1064,7 +1064,7 @@ const saveAppointment = (arg, sender_psid) => {
   let data = arg;
   data.ref = generateRandom(6);
   data.status = "pending";
-  db.collection('appointments').add(data).then((success)=>{
+  db.collection('orders').add(data).then((success)=>{
     console.log('SAVED', success);
     let text = "Thank you. We have received your appointment."+ "\u000A";
     text += " We wil call you to confirm soon"+ "\u000A";
