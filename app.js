@@ -580,10 +580,10 @@ const handlePostback = (sender_psid, received_postback) => {
       case "Seasonal":
           showSeasonal(sender_psid);
         break; 
-      case "Love & Romance":
+      case "LoveRomance":
           showLove(sender_psid);
         break;  
-      case "Birthday":
+      case "HappyBirthday":
           showBirthday(sender_psid);
         break;                       
       default:
@@ -720,7 +720,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "payload": "Seasonal",
                 },               
               ],
           },{
@@ -731,7 +731,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "payload": "LoveRomance",
                 },               
               ],
           },{
@@ -742,7 +742,7 @@ const showCollection = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "View Collection",
-                  "payload": "Flower:View Collection",
+                  "payload": "HappyBirthday",
                 },               
               ],
           }
