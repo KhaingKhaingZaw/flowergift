@@ -468,7 +468,7 @@ const handleMessage = (sender_psid, received_message) => {
      userInputs[user_id].email = received_message.text;
      current_question = '';
      
-     confirmAppointment(userInputs, sender_psid);
+     confirmOrder(userInputs, sender_psid);
 
   }
   else {
@@ -1022,8 +1022,8 @@ const botQuestions = (current_question, sender_psid) => {
   }
 }
 
-const confirmAppointment = (userInputs, sender_psid) => {
-  console.log('APPOINTMENT INFO', userInputs);
+const confirmOrder = (userInputs, sender_psid) => {
+  console.log('ORDER INFO', userInputs);
   let summery = "start:" + userInputs[user_id].start + "\u000A";
   summery += "flower:" + userInputs[user_id].flower + "\u000A";
   summery += "location:" + userInputs[user_id].location + "\u000A";
@@ -1040,7 +1040,7 @@ const confirmAppointment = (userInputs, sender_psid) => {
             {
               "content_type":"text",
               "title":"Confirm",
-              "payload":"confirm-appointment",              
+              "payload":"confirm-order",              
             },{
               "content_type":"text",
               "title":"Cancel",
@@ -1054,7 +1054,7 @@ const confirmAppointment = (userInputs, sender_psid) => {
   });
 }
 
-const saveAppointment = (arg, sender_psid) => {
+const saveOrder = (arg, sender_psid) => {
   let data = arg;
   data.ref = generateRandom(6);
   data.status = "pending";
