@@ -724,7 +724,7 @@ const showCollection = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Love & Romancce",
+            "title": "Love & Romance",
             "subtitle": "I Love You",
             "image_url":"https://www.artemisia.fi.it/fioristi/wp-content/uploads/2016/02/Bouquet_love-scaled.jpg",                       
             "buttons": [
@@ -826,9 +826,9 @@ const showSeasonal = (sender_psid) => {
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "Acashia",
+            "title": "Summer",
             "subtitle": "20,000MMK",
-            "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
+            "image_url":"https://en.galeriakvetin.sk/media/cache/original/53870fb4e7f0c.JPG",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -837,9 +837,9 @@ const showSeasonal = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Chole",
+            "title": "Sunrise",
             "subtitle": "25,000MMK",
-            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
+            "image_url":"https://www.kvetinyonline.cz/images-zbozi/000085/000085-1_800.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -848,9 +848,9 @@ const showSeasonal = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Naomi",
+            "title": "Yellow Rose",
             "subtitle": "25,000MMK",
-            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
+            "image_url":"https://www.flora-online.cz/upload/media/255/491.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -859,9 +859,9 @@ const showSeasonal = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Madison",
+            "title": "Art Flowers",
             "subtitle": "30,000MMK",
-            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
+            "image_url":"https://artflower.al/wp-content/uploads/2017/11/thank-you-very-much-1.png",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -888,7 +888,7 @@ const showLove = (sender_psid) => {
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "Chocolate",
+            "title": "Love",
             "subtitle": "20,000MMK",
             "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
             "buttons": [
@@ -899,7 +899,7 @@ const showLove = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Chole",
+            "title": "Red Rose",
             "subtitle": "25,000MMK",
             "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
             "buttons": [
@@ -910,7 +910,7 @@ const showLove = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Naomi",
+            "title": "Dream",
             "subtitle": "25,000MMK",
             "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
             "buttons": [
@@ -921,7 +921,7 @@ const showLove = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Madison",
+            "title": "Romance",
             "subtitle": "30,000MMK",
             "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
             "buttons": [
@@ -950,9 +950,9 @@ const showBirthday = (sender_psid) => {
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "Rose",
+            "title": "Happy Birthday 1",
             "subtitle": "20,000MMK",
-            "image_url":"https://i.pinimg.com/originals/a4/f1/1c/a4f11ca25c295d6a140cafe4694c5c9a.jpg",                       
+            "image_url":"https://birthdaycardsimages.com/wp-content/uploads/2018/09/happy-birthday-rose.png",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -961,9 +961,9 @@ const showBirthday = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Chole",
+            "title": "Happy Birthday 2",
             "subtitle": "25,000MMK",
-            "image_url":"https://assets.vogue.com/photos/5a4bd32ca43649100715861c/master/w_2560%2Cc_limit/00-story-floral.jpg",                       
+            "image_url":"https://acegif.com/wp-content/gif/hapbird20-14-gap.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -972,9 +972,9 @@ const showBirthday = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Naomi",
+            "title": "Happy Birthday 3",
             "subtitle": "25,000MMK",
-            "image_url":"https://image.freepik.com/free-photo/beautiful-bouquet-wild-flowers-voloshki-chamomiles-dark-surface_130716-785.jpg",                       
+            "image_url":"https://assets.eflorist.com/assets/products/PHR_/T602-2A.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -983,9 +983,9 @@ const showBirthday = (sender_psid) => {
                 },               
               ],
           },{
-            "title": "Madison",
+            "title": "Happy Birthday 4",
             "subtitle": "30,000MMK",
-            "image_url":"https://anniebrook.com.au/wp-content/uploads/2017/11/WB-NWB-2.jpg",                       
+            "image_url":"https://i.pinimg.com/originals/04/30/96/0430965e8dc1e9b56f9b35edf4e4dbb1.jpg",                       
             "buttons": [
                 {
                   "type": "postback",
@@ -1030,8 +1030,6 @@ const confirmAppointment = (userInputs, sender_psid) => {
   console.log('APPOINTMENT INFO', userInputs);
   let summery = "start:" + userInputs[user_id].start + "\u000A";
   summery += "flower:" + userInputs[user_id].flower + "\u000A";
-  summery += "selection:" + userInputs[user_id].selection + "\u000A";
-  summery += "select:" + userInputs[user_id].select + "\u000A";
   summery += "location:" + userInputs[user_id].location + "\u000A";
   summery += "date:" + userInputs[user_id].date + "\u000A";
   summery += "name:" + userInputs[user_id].name + "\u000A";
