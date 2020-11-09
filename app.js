@@ -833,7 +833,7 @@ const showSeasonal = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "seasonal:Select",
+                  "payload": "Flower:Summer",
                 },               
               ],
           },{
@@ -844,7 +844,7 @@ const showSeasonal = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "seasonal:Select",
+                  "payload": "Flower:Sunrise",
                 },               
               ],
           },{
@@ -855,7 +855,7 @@ const showSeasonal = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "seasonal:Select",
+                  "payload": "Flower:Yellow Rose",
                 },               
               ],
           },{
@@ -866,7 +866,7 @@ const showSeasonal = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "seasonal:Select",
+                  "payload": "Flower:Art Flowers",
                 },               
               ],
           }
@@ -895,7 +895,7 @@ const showLove = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "love:Select",
+                  "payload": "Flower:Love",
                 },               
               ],
           },{
@@ -906,7 +906,7 @@ const showLove = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "love:Select",
+                  "payload": "Flower:Red Rose",
                 },               
               ],
           },{
@@ -917,7 +917,7 @@ const showLove = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "love:Select",
+                  "payload": "Flower:Dream",
                 },               
               ],
           },{
@@ -928,7 +928,7 @@ const showLove = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "love:Select",
+                  "payload": "Flower:Romance",
                 },               
               ],
           }
@@ -957,7 +957,7 @@ const showBirthday = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "birthday:Select",
+                  "payload": "Flower:Happy Birthday 1",
                 },               
               ],
           },{
@@ -968,7 +968,7 @@ const showBirthday = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "birthday:Select",
+                  "payload": "Flower:Happy Birthday 2",
                 },               
               ],
           },{
@@ -979,7 +979,7 @@ const showBirthday = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "birthday:Select",
+                  "payload": "Flower:Happy Birthday 3",
                 },               
               ],
           },{
@@ -990,7 +990,7 @@ const showBirthday = (sender_psid) => {
                 {
                   "type": "postback",
                   "title": "Select",
-                  "payload": "birthday:Select",
+                  "payload": "Flower:Happy Birthday 4",
                 },               
               ],
           }
