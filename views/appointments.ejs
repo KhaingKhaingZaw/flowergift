@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Appointments</title>
+    <title>Orders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
 
   <body>
-  <h1>Appointments</h1>
+  <h1>Orders</h1>
 
  
   
@@ -17,35 +17,26 @@
     <th>Name</th>
     <th>Phone</th>
     <th>EMail</th>
-    <th>Gender</th>
-    <th>Flower</th>
-    <th>Department</th>
-    <th>Visit</th>    
+    <th>Flower</th>   
     <th>Date</th>
-    <th>Time</th>
-    <th>Message</th>
     <th>Reference</th>
     <th>Status</th>
     <th>Action</th>
   </tr>
 
 
-  <% data.forEach(function(appointment){ %>
+  <% data.forEach(function(order){ %>
      <tr>
       
-       <td><%= appointment.name %></td>
-       <td><%= appointment.phone %></td>
-       <td><%= appointment.email %></td>
-       <td><%= appointment.gender %></td>
-       <td><%= appointment.doctor %></td>
-       <td><%= appointment.department %></td>
-       <td><%= appointment.visit %></td>
-       <td><%= appointment.date %></td>
-       <td><%= appointment.time %></td>
-       <td><%= appointment.message %></td>
-       <td><%= appointment.ref %></td>
-       <td><%= appointment.status %></td>
-       <td><a href="updateappointment/<%= appointment.doc_id %>">Edit</a> | Delete</td>
+       <td><%= order.name %></td>
+       <td><%= order.phone %></td>
+       <td><%= order.email %></td>
+       <td><%= order.flower %></td>
+       <td><%= order.date %></td>
+       <td><%= order.message %></td>
+       <td><%= order.ref %></td>
+       <td><%= order.status %></td>
+       <td><a href="updateappointment/<%= order.doc_id %>">Edit</a> | Delete</td>
      </tr>
   <% }); %>
 

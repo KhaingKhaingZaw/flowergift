@@ -144,9 +144,9 @@ app.post('/test',function(req,res){
     callSend(sender_psid, response);
 });
 
-app.get('/admin/appointments', async function(req,res){
+app.get('/admin/orders', async function(req,res){
  
-  const appointmentsRef = db.collection('appointments');
+  const appointmentsRef = db.collection('orders');
   const snapshot = await appointmentsRef.get();
 
   if (snapshot.empty) {
@@ -156,24 +156,24 @@ app.get('/admin/appointments', async function(req,res){
   let data = []; 
 
   snapshot.forEach(doc => {
-    let appointment = {};
-    appointment = doc.data();
-    appointment.doc_id = doc.id;
+    let order = {};
+    order = doc.data();
+    order.doc_id = doc.id;
 
-    data.push(appointment);
+    data.push(order);
     
   });
 
   console.log('DATA:', data);
 
-  res.render('appointments.ejs', {data:data});
+  res.render('orders.ejs', {data:data});
   
 });
 
 app.get('/admin/updateappointment/:doc_id', async function(req,res){
   let doc_id = req.params.doc_id; 
   
-  const appoinmentRef = db.collection('appointments').doc(doc_id);
+  const appoinmentRef = db.collection('orders').doc(doc_id);
   const doc = await appoinmentRef.get();
   if (!doc.exists) {
     console.log('No such document!');
@@ -200,19 +200,15 @@ app.post('/admin/updateappointment', function(req,res){
     email:req.body.email,
     flower:req.body.flower,
     start:req.body.start,
-    selection:req.body.selection,
     location:req.body.location,
     date:req.body.date,
-    message:req.body.message,
-    status:req.body.status,
-    doc_id:req.body.doc_id,
     ref:req.body.ref,
     comment:req.body.comment
   }
 
-  db.collection('appointments').doc(req.body.doc_id)
+  db.collection('orders').doc(req.body.doc_id)
   .update(data).then(()=>{
-      res.redirect('/admin/appointments');
+      res.redirect('/admin/orders');
   }).catch((err)=>console.log('ERROR:', error)); 
  
 });
@@ -422,8 +418,8 @@ function handleQuickReply(sender_psid, received_message) {
         case "off":
             showQuickReplyOff(sender_psid);
           break; 
-        case "confirm-appointment":
-              saveAppointment(userInputs[user_id], sender_psid);
+        case "confirm-order":
+              saveOrder(userInputs[user_id], sender_psid);
           break;              
         default:
             defaultReply(sender_psid);
@@ -1064,7 +1060,7 @@ const saveAppointment = (arg, sender_psid) => {
   data.status = "pending";
   db.collection('orders').add(data).then((success)=>{
     console.log('SAVED', success);
-    let text = "Thank you. We have received your appointment."+ "\u000A";
+    let text = "Thank you. We have received your order."+ "\u000A";
     text += " We wil call you to confirm soon"+ "\u000A";
     text += "Your booking reference number is:" + data.ref;
     let response = {"text": text};
