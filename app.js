@@ -199,7 +199,6 @@ app.post('/admin/updateorder', function(req,res){
     phone:req.body.phone,
     email:req.body.email,
     flower:req.body.flower,
-    start:req.body.start,
     location:req.body.location,
     date:req.body.date,
     ref:req.body.ref,
