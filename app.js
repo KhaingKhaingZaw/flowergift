@@ -423,7 +423,8 @@ function handleQuickReply(sender_psid, received_message) {
           break;
         case "track-my-order":
               current_question="q6";
-              botQuestions(current_question,sender_psid)             
+              botQuestions(current_question,sender_psid);
+          break;             
         default:
             defaultReply(sender_psid);
     } 
