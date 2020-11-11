@@ -16,6 +16,7 @@
     "body-parser": "^1.15.0",
     "ejs": "^3.0.1",
     "express": "^4.13.4",
+    "express-session": "^1.17.1",
     "firebase-admin": "^8.9.2",
     "multer": "^1.4.2",
     "request": "^2.72.0",

@@ -18,10 +18,18 @@ const
   app = express(); 
 
 const uuidv4 = uuid();
-
+const session = require('express-session');
 
 app.use(body_parser.json());
 app.use(body_parser.urlencoded());
+app.set('trust proxy', 1);
+app.use(session({secret: 'effystonem'}));
+
+
+let sess;
+
+
+
 
 const bot_questions = {
   "q1": "Where would you like to send this? (Don't forget to include the apartment#)",
@@ -145,9 +153,47 @@ app.post('/test',function(req,res){
     callSend(sender_psid, response);
 });
 
+app.get('/login',function(req,res){    
+    sess = req.session;
+
+    if(sess.login){
+       res.send('You are already login. <a href="logout">logout</a>');
+    }else{
+      res.render('login.ejs');
+    } 
+    
+});
+
+
+app.get('/logout',function(req,res){ 
+    //sess = req.session;   
+    req.session.destroy(null);  
+    res.redirect('login');
+});
+
+app.post('/login',function(req,res){    
+    sess = req.session;
+
+    let username = req.body.username;
+    let password = req.body.password;
+
+    if(username == 'admin' && password == 'test123'){
+      sess.username = 'admin';
+      sess.login = true;
+      res.render('/admin/orders');
+    }else{
+      res.send('login failed');
+    }   
+});
+
 app.get('/admin/orders', async function(req,res){
  
-  const ordersRef = db.collection('orders');
+
+ sess = req.session;
+    console.log('SESS:', sess); 
+    if(sess.login){
+
+      const ordersRef = db.collection('orders');
   const snapshot = await ordersRef.get();
 
   if (snapshot.empty) {
@@ -168,6 +214,13 @@ app.get('/admin/orders', async function(req,res){
   console.log('DATA:', data);
 
   res.render('orders.ejs', {data:data});
+
+    }else{
+      res.send('you are not authorized to view this page');
+    }   
+
+
+  
   
 });
 
