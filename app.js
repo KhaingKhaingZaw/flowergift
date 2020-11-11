@@ -1118,7 +1118,7 @@ const showOrder = async(sender_psid, order_ref) => {
 
           let response1 = { "text": `Your order ${order.ref} is ${order.status}.` };
           let response2 = { "text": `Seller message: ${order.comment}.` };
-          let response3 = { "text": `You have remaining ${cust_points} point(s)` };
+          let response3 = { "text": `Thank You for your order.` };
             callSend(sender_psid, response1).then(()=>{
               return callSend(sender_psid, response2).then(()=>{
                 return callSend(sender_psid, response3)
