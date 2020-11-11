@@ -146,8 +146,8 @@ app.post('/test',function(req,res){
 
 app.get('/admin/orders', async function(req,res){
  
-  const appointmentsRef = db.collection('orders');
-  const snapshot = await appointmentsRef.get();
+  const ordersRef = db.collection('orders');
+  const snapshot = await ordersRef.get();
 
   if (snapshot.empty) {
     res.send('no data');
@@ -170,7 +170,7 @@ app.get('/admin/orders', async function(req,res){
   
 });
 
-app.get('/admin/updateappointment/:doc_id', async function(req,res){
+app.get('/admin/updateorder/:doc_id', async function(req,res){
   let doc_id = req.params.doc_id; 
   
   const appoinmentRef = db.collection('orders').doc(doc_id);
@@ -183,13 +183,13 @@ app.get('/admin/updateappointment/:doc_id', async function(req,res){
     data.doc_id = doc.id;
 
     console.log('Document data:', data);
-    res.render('editappointment.ejs', {data:data});
+    res.render('editorder.ejs', {data:data});
   } 
 
 });
 
 
-app.post('/admin/updateappointment', function(req,res){
+app.post('/admin/updateorder', function(req,res){
   console.log('REQ:', req.body); 
 
   
