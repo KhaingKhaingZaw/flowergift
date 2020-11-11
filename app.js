@@ -29,6 +29,7 @@ const bot_questions = {
   "q3": "Please enter date (dd:mm:yy)",
   "q4": "What is the recipent's phone number in case we need to contant them about delivery?",
   "q5": "Confirm a email that you would like you order confirmation to be sent",
+  "q6": "please enter your order reference number" ,
 }
 
 let current_question = '';
@@ -419,7 +420,10 @@ function handleQuickReply(sender_psid, received_message) {
           break; 
         case "confirm-order":
               saveOrder(userInputs[user_id], sender_psid);
-          break;              
+          break;
+        case "track-my-order":
+              current_question="q6";
+              botQuestions(current_question,sender_psid)             
         default:
             defaultReply(sender_psid);
     } 
@@ -469,6 +473,12 @@ const handleMessage = (sender_psid, received_message) => {
      
      confirmOrder(userInputs, sender_psid);
 
+  }else if(current_question == 'q6'){
+     let order_ref = received_message.text; 
+
+     console.log('order_ref: ', order_ref);    
+     current_question = '';     
+     showOrder(sender_psid, order_ref);
   }
   else {
       
@@ -679,7 +689,7 @@ const flowerOrder = (sender_psid) => {
             },{
               "content_type":"text",
               "title":"Track my order",
-              "payload":"start:Track my order",             
+              "payload":"track-my-order",             
             },
 
     ]
@@ -1018,6 +1028,9 @@ const botQuestions = (current_question, sender_psid) => {
   }else if(current_question == 'q5'){
     let response = {"text": bot_questions.q5};
     callSend(sender_psid, response);
+  }else if(current_question == 'q6'){
+    let response = {"text": bot_questions.q6};
+    callSend(sender_psid, response);
   }
 }
 
@@ -1067,6 +1080,54 @@ const saveOrder = (arg, sender_psid) => {
   }).catch((err)=>{
      console.log('Error', err);
   });
+}
+
+
+
+const showOrder = async(sender_psid, order_ref) => {
+
+    let cust_points = 0;
+
+    const ordersRef = db.collection('orders').where("ref", "==", order_ref).limit(1);
+    const snapshot = await ordersRef.get();
+
+    const userRef = db.collection('users').doc(user_id);
+    const user = await userRef.get();
+    if (!user.exists) {
+      cust_points = 0;           
+    } else {                
+        cust_points  = user.data().points;          
+    } 
+
+
+    if (snapshot.empty) {
+      let response = { "text": "Incorrect order number" };
+      callSend(sender_psid, response).then(()=>{
+        return startGreeting(sender_psid);
+      });
+    }else{
+          let order = {}
+
+          snapshot.forEach(doc => {      
+              order.ref = doc.data().ref;
+              order.status = doc.data().status;
+              order.comment = doc.data().comment;  
+          });
+
+
+          let response1 = { "text": `Your order ${order.ref} is ${order.status}.` };
+          let response2 = { "text": `Seller message: ${order.comment}.` };
+          let response3 = { "text": `You have remaining ${cust_points} point(s)` };
+            callSend(sender_psid, response1).then(()=>{
+              return callSend(sender_psid, response2).then(()=>{
+                return callSend(sender_psid, response3)
+              });
+          });
+
+    }
+
+    
+
 }
 
 /**************
