@@ -28,7 +28,7 @@ const bot_questions = {
   "q2": "What is the recepient's full name in case we need to contact them about delivery?",
   "q3": "Please enter date (dd:mm:yy)",
   "q4": "What is the recipent's phone number in case we need to contant them about delivery?",
-  "q5": "Comfirm a email that you would like you order confirmation to be sent",
+  "q5": "Confirm a email that you would like you order confirmation to be sent",
 }
 
 let current_question = '';
