@@ -180,7 +180,7 @@ app.post('/login',function(req,res){
     if(username == 'admin' && password == 'test123'){
       sess.username = 'admin';
       sess.login = true;
-      res.render('/admin/orders');
+      res.redirect('/admin/orders');
     }else{
       res.send('login failed');
     }   
