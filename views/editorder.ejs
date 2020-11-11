@@ -47,50 +47,12 @@
     <input type="email" class="form-control" name="email" value="<%= data.email %>">
   </div>
   <div class="form-group">
-    Gender: 
-    <input type="radio" id="male" name="gender" value="M" 
-    <%if(data.gender == "M"){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="F"
-    <%if(data.gender == "F"){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="female">Female</label><br>  
-  </div>
-  <div class="form-group">
-    <label for="name">Doctor</label>
+    <label for="name">Flower</label>
     <input type="text" class="form-control" name="flower" value="<%= data.flower %>">    
-  </div>
-  <div class="form-group">
-    <label for="name">Department</label>
-    <input type="text" class="form-control" id="department" name="department" value="<%= data.department %>">    
-  </div>
-  <div class="form-group">
-    Visit: 
-    <input type="radio" name="visit" value="first time" 
-    <%if(data.visit == 'first time' ){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="male">First Time</label>
-    <input type="radio" name="vist" value="follow up"
-    <%if(data.visit == 'follow up'){%>
-        <%="checked"%>
-    <%}%>
-    >
-    <label for="female">Follow Up</label><br>     
   </div>
   <div class="form-group">
     <label for="name">Date</label>
     <input type="text" class="form-control" name="date" value="<%= data.date %>">    
-  </div>
-  <div class="form-group">
-    <label for="name">Time</label>
-    <input type="text" class="form-control" name="time" value="<%= data.time %>">    
   </div>
   <div class="form-group">
     <label for="name">Message</label>
