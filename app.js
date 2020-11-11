@@ -201,6 +201,7 @@ app.post('/admin/updateorder', function(req,res){
     flower:req.body.flower,
     date:req.body.date,
     ref:req.body.ref,
+    status:req.body.status,
     comment:req.body.comment
   }
 
