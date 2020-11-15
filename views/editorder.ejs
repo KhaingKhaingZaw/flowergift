@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+     body {
+        background-image:url(https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      h1{
+        color: pink;
+      }
+    </style>
     <meta charset="UTF-8">
     <title>Edit Order</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,28 +43,28 @@
   </script>
   
  
-
+  <h1> Edid Order </h1>
   <form id="form" method="post" action="../updateorder">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" name="name" value="<%= data.name %>">    
-  </div>
+  </div><br><br>
   <div class="form-group">
     <label for="name">Phone</label>
     <input type="text" class="form-control" name="phone" value="<%= data.phone %>">    
-  </div>
+  </div><br><br>
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" name="email" value="<%= data.email %>">
-  </div>
+  </div><br><br>
   <div class="form-group">
     <label for="name">Flower</label>
     <input type="text" class="form-control" name="flower" value="<%= data.flower %>">    
-  </div>
+  </div><br><br>
   <div class="form-group">
     <label for="name">Date</label>
     <input type="text" class="form-control" name="date" value="<%= data.date %>">    
-  </div>
+  </div><br><br>
   <div class="form-group">
     <label for="status">Status:</label>
   <select name="status" id="status">    
@@ -69,11 +80,11 @@
     >Confirm</option>
    
   </select>   
-  </div>
+  </div><br><br>
   <div class="form-group">
     <label for="name">Comment</label>
     <textarea name="comment" rows="4" cols="50"></textarea>      
-  </div>
+  </div><br><br>
 
   
   <input type="hidden"  name="doc_id" value="<%= data.doc_id %>">
