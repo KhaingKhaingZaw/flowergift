@@ -10,11 +10,28 @@
       }
       h1{
         color: pink;
+        max-width: 500px;
       }
       form{
         color: #F0FFFF;
       }
       input{
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid red;
+      border-radius: 4px;
+      }
+      option{
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid red;
+      border-radius: 4px;
+      }
+      textarea{
       width: 50%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -64,23 +81,23 @@
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" name="name" value="<%= data.name %>">    
-  </div><br><br>
+  </div><br>
   <div class="form-group">
     <label for="name">Phone</label>
     <input type="text" class="form-control" name="phone" value="<%= data.phone %>">    
-  </div><br><br>
+  </div><br>
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" name="email" value="<%= data.email %>">
-  </div><br><br>
+  </div><br>
   <div class="form-group">
     <label for="name">Flower</label>
     <input type="text" class="form-control" name="flower" value="<%= data.flower %>">    
-  </div><br><br>
+  </div><br>
   <div class="form-group">
     <label for="name">Date</label>
     <input type="text" class="form-control" name="date" value="<%= data.date %>">    
-  </div><br><br>
+  </div><br>
   <div class="form-group">
     <label for="status">Status:</label>
   <select name="status" id="status">    
@@ -96,11 +113,11 @@
     >Confirm</option>
    
   </select>   
-  </div><br><br>
+  </div><br>
   <div class="form-group">
     <label for="name">Comment</label>
     <textarea name="comment" rows="4" cols="50"></textarea>      
-  </div><br><br>
+  </div><br>
 
   
   <input type="hidden"  name="doc_id" value="<%= data.doc_id %>">
