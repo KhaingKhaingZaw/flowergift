@@ -64,10 +64,6 @@ const upload = multer({
 
 });
 
-<script>
-  document.body.style.backgroundColor = "red";
-</script>
-
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
