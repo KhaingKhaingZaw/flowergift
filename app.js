@@ -30,7 +30,6 @@ let sess;
 
 
 
-
 const bot_questions = {
   "q1": "Where would you like to send this? (Don't forget to include the apartment#)",
   "q2": "What is the recepient's full name in case we need to contact them about delivery?",
@@ -65,7 +64,9 @@ const upload = multer({
 
 });
 
-// parse application/x-www-form-urlencoded
+<script>
+  document.body.style.backgroundColor = "red";
+</script>
 
 
 app.set('view engine', 'ejs');
@@ -1318,7 +1319,7 @@ function testDelete(sender_psid){
               {
                 "type": "web_url",
                 "title": "enter",
-                "url":"https://fbstarter.herokuapp.com/test/",
+                "url":"https://flowergift.herokuapp.com/test/",
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
