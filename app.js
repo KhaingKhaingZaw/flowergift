@@ -1330,9 +1330,9 @@ function testDelete(sender_psid){
 
 const defaultReply = (sender_psid) => {
   let response1 = {"text": "Welcome Lily Flower Service"};
-  let response2 = {"text": "To test quick reply, type 'quick'"}; 
-  let response3 = {"text": "To test button reply, type 'button'"};   
-  let response4 = {"text": "To test webview, type 'webview'"};
+  let response2 = {"text": "How are you today?"}; 
+  let response3 = {"text": "I hope you good."};   
+  let response4 = {"text": "If you want to order send 'order'"};
     callSend(sender_psid, response1).then(()=>{
       return callSend(sender_psid, response2).then(()=>{
         return callSend(sender_psid, response3).then(()=>{
